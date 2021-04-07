@@ -69,6 +69,10 @@ const Navbar = () => {
                 <Icon name="github" />
                 Github
               </Button>
+              <Button color="primary" style={{ marginLeft: '0.5em', background: '#fc6d26' }}>
+                <Icon name="gitlab" />
+                Gitlab
+              </Button>
               <Button primary style={{ marginLeft: '0.5em' }}>
                 <Icon name="linkedin" />
                 LinkedIn

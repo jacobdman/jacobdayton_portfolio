@@ -15,8 +15,9 @@ export default function Home() {
         <Header as="h2">FullStack Developer</Header>
       </Segment>
       <Navbar />
-      <Segment attached tertiary style={{ height: '200vh' }}></Segment>
-      {/* <main className={styles.main}></main> */}
+      <Segment attached tertiary style={{ height: '200vh' }}>
+        <Header as="h1">Recent Articles</Header>
+      </Segment>
     </div>
   );
 }

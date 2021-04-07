@@ -1,23 +1,17 @@
 import Navbar from 'components/Navbar';
-import { Segment, Image, Container, Header } from 'semantic-ui-react';
+import { Segment, Search, Container, Header, Divider } from 'semantic-ui-react';
+import Projects from 'components/Projects';
 
 const About = () => (
   <div>
     <Navbar />
-    <Segment tertiary attached style={{ minHeight: 'calc(100vh - 415.86px)' }}>
-      <Container textAlign="center" text>
-        <Image
-          src="https://react.semantic-ui.com/images/wireframe/square-image.png"
-          size="small"
-          circular
-        />
-        <Header as="h1">Jacob Dayton</Header>
-      </Container>
-      <Container textAlign="center" text>
-        Full-Stack Web Developer with a stuff stuff stuff
-      </Container>
-      <Container textAlign="center" text>
-        Socail Links
+    <Segment textAlign="center" vertical secondary>
+      <Container style={{ padding: 50 }}>
+        <Header as="h1">Projects</Header>
+        All of the projects I have worked on or am currently working on. Click
+        on a project to see all related blog posts and updates to the project.
+        <Divider />
+        <Projects />
       </Container>
     </Segment>
   </div>
