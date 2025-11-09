@@ -64,20 +64,20 @@ const Navbar = () => {
                 </Menu.Item>
               </Link>
             ))}
-            <Menu.Item position="right">
-              <Button>
+            {/* <Menu.Item position="right">
+              <Button onClick={() => window.open('https://github.com/jacobdman', '_blank')}>
                 <Icon name="github" />
                 Github
               </Button>
-              <Button color="primary" style={{ marginLeft: '0.5em', background: '#fc6d26' }}>
+              <Button color="primary" style={{ marginLeft: '0.5em', background: '#fc6d26' }} onClick={() => window.open('https://gitlab.com/jacobdman', '_blank')}>
                 <Icon name="gitlab" />
                 Gitlab
               </Button>
-              <Button primary style={{ marginLeft: '0.5em' }}>
+              <Button primary style={{ marginLeft: '0.5em' }} onClick={() => window.open('https://www.linkedin.com/in/jacobdayton/', '_blank')}>
                 <Icon name="linkedin" />
                 LinkedIn
               </Button>
-            </Menu.Item>
+            </Menu.Item> */}
           </Container>
         </Menu>
       </Segment>
