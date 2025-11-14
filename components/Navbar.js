@@ -1,15 +1,13 @@
-import { useState } from 'react';
 import { useRouter } from 'next/router';
-import Link from 'next/Link';
-import {
-  Button,
-  Container,
-  Menu,
-  Segment,
-  Icon,
-  Visibility,
-  Header,
-} from 'semantic-ui-react';
+import Link from 'next/link';
+import AppBar from '@mui/material/AppBar';
+import Button from '@mui/material/Button';
+import Container from '@mui/material/Container';
+import Stack from '@mui/material/Stack';
+import Toolbar from '@mui/material/Toolbar';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import TerminalIcon from '@mui/icons-material/Terminal';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const routes = [
   {
@@ -31,57 +29,86 @@ const routes = [
 ];
 
 const Navbar = () => {
-  const [fixed, setFixed] = useState(false);
   const router = useRouter();
   return (
-    <Visibility
-      onTopPassed={() => setFixed(true)}
-      onTopVisible={() => setFixed(false)}
-      once={false}
-    >
-      <Segment
-        inverted
-        textAlign="center"
-        vertical
-        style={{
-          position: fixed ? 'fixed' : 'relative',
-          top: 0,
-          width: '100%',
-          zIndex: 9999,
-        }}
-      >
-        <Menu inverted secondary>
-          <Container>
-            {/* {fixed && (
-              <Menu.Item position="left">
-                <Header inverted as="h1">Jacob Dayton</Header>
-              </Menu.Item>
-            )} */}
-            {routes.map((route) => (
-              <Link href={route.route}>
-                <Menu.Item active={router.pathname === route.route}>
-                  {route.name}
-                </Menu.Item>
-              </Link>
-            ))}
-            <Menu.Item position="right">
-              <Button>
-                <Icon name="github" />
-                Github
-              </Button>
-              <Button color="primary" style={{ marginLeft: '0.5em', background: '#fc6d26' }}>
-                <Icon name="gitlab" />
-                Gitlab
-              </Button>
-              <Button primary style={{ marginLeft: '0.5em' }}>
-                <Icon name="linkedin" />
-                LinkedIn
-              </Button>
-            </Menu.Item>
-          </Container>
-        </Menu>
-      </Segment>
-    </Visibility>
+    <AppBar position="sticky" color="primary" enableColorOnDark>
+      <Container maxWidth="lg">
+        <Toolbar disableGutters sx={{ justifyContent: 'space-between', minHeight: 72 }}>
+          <Stack direction="row" spacing={1}>
+            {routes.map((route) => {
+              const isActive = router.pathname === route.route;
+              return (
+                <Link key={route.route} href={route.route} style={{ textDecoration: 'none' }}>
+                  <Button
+                    color={isActive ? 'secondary' : 'inherit'}
+                    variant={isActive ? 'contained' : 'text'}
+                    sx={{
+                      color: isActive ? 'common.white' : 'rgba(255, 255, 255, 0.9)',
+                      textTransform: 'none',
+                      fontWeight: isActive ? 600 : 500,
+                      '&:hover': {
+                        color: 'common.white',
+                        bgcolor: 'rgba(255, 255, 255, 0.1)',
+                      },
+                    }}
+                  >
+                    {route.name}
+                  </Button>
+                </Link>
+              );
+            })}
+          </Stack>
+          <Stack direction="row" spacing={1}>
+            <Button
+              component="a"
+              href="#"
+              color="inherit"
+              variant="outlined"
+              startIcon={<GitHubIcon />}
+              sx={{
+                borderColor: 'rgba(255,255,255,0.3)',
+                '&:hover': {
+                  borderColor: 'rgba(255,255,255,0.5)',
+                  bgcolor: 'rgba(255, 255, 255, 0.1)',
+                },
+              }}
+            >
+              Github
+            </Button>
+            <Button
+              component="a"
+              href="#"
+              color="inherit"
+              variant="outlined"
+              startIcon={<TerminalIcon />}
+              sx={{
+                borderColor: 'rgba(255,255,255,0.3)',
+                '&:hover': {
+                  borderColor: 'rgba(255,255,255,0.5)',
+                  bgcolor: 'rgba(255, 255, 255, 0.1)',
+                },
+              }}
+            >
+              Gitlab
+            </Button>
+            <Button
+              component="a"
+              href="#"
+              color="secondary"
+              variant="contained"
+              startIcon={<LinkedInIcon />}
+              sx={{
+                '&:hover': {
+                  bgcolor: 'secondary.dark',
+                },
+              }}
+            >
+              LinkedIn
+            </Button>
+          </Stack>
+        </Toolbar>
+      </Container>
+    </AppBar>
   );
 };
 
