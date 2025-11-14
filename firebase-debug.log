@@ -1,0 +1,19 @@
+[debug] [2025-11-14T02:25:15.101Z] ----------------------------------------------------------------------
+[debug] [2025-11-14T02:25:15.102Z] Command:       /Users/jacobdayton/.nvm/versions/node/v22.14.0/bin/node /Users/jacobdayton/.nvm/versions/node/v22.14.0/bin/firebase init
+[debug] [2025-11-14T02:25:15.102Z] CLI Version:   14.19.1
+[debug] [2025-11-14T02:25:15.102Z] Platform:      darwin
+[debug] [2025-11-14T02:25:15.103Z] Node Version:  v22.14.0
+[debug] [2025-11-14T02:25:15.103Z] Time:          Thu Nov 13 2025 19:25:15 GMT-0700 (Mountain Standard Time)
+[debug] [2025-11-14T02:25:15.103Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/jacobdayton/projects/jacobdayton.com
+

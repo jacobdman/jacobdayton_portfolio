@@ -38,15 +38,18 @@ const Navbar = () => {
             {routes.map((route) => {
               const isActive = router.pathname === route.route;
               return (
-                <Link key={route.route} href={route.route} passHref>
+                <Link key={route.route} href={route.route} style={{ textDecoration: 'none' }}>
                   <Button
-                    component="a"
                     color={isActive ? 'secondary' : 'inherit'}
                     variant={isActive ? 'contained' : 'text'}
                     sx={{
-                      color: isActive ? 'common.white' : 'inherit',
+                      color: isActive ? 'common.white' : 'rgba(255, 255, 255, 0.9)',
                       textTransform: 'none',
                       fontWeight: isActive ? 600 : 500,
+                      '&:hover': {
+                        color: 'common.white',
+                        bgcolor: 'rgba(255, 255, 255, 0.1)',
+                      },
                     }}
                   >
                     {route.name}
@@ -62,7 +65,13 @@ const Navbar = () => {
               color="inherit"
               variant="outlined"
               startIcon={<GitHubIcon />}
-              sx={{ borderColor: 'rgba(255,255,255,0.3)' }}
+              sx={{
+                borderColor: 'rgba(255,255,255,0.3)',
+                '&:hover': {
+                  borderColor: 'rgba(255,255,255,0.5)',
+                  bgcolor: 'rgba(255, 255, 255, 0.1)',
+                },
+              }}
             >
               Github
             </Button>
@@ -72,7 +81,13 @@ const Navbar = () => {
               color="inherit"
               variant="outlined"
               startIcon={<TerminalIcon />}
-              sx={{ borderColor: 'rgba(255,255,255,0.3)' }}
+              sx={{
+                borderColor: 'rgba(255,255,255,0.3)',
+                '&:hover': {
+                  borderColor: 'rgba(255,255,255,0.5)',
+                  bgcolor: 'rgba(255, 255, 255, 0.1)',
+                },
+              }}
             >
               Gitlab
             </Button>
@@ -82,6 +97,11 @@ const Navbar = () => {
               color="secondary"
               variant="contained"
               startIcon={<LinkedInIcon />}
+              sx={{
+                '&:hover': {
+                  bgcolor: 'secondary.dark',
+                },
+              }}
             >
               LinkedIn
             </Button>

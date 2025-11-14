@@ -8,21 +8,12 @@ import Typography from '@mui/material/Typography';
 
 const footerSections = [
   {
-    title: 'Group 1',
-    links: ['Link One', 'Link Two', 'Link Three', 'Link Four'],
+    title: 'Navigation',
+    links: ['Home', 'About', 'Portfolio', 'Blog'],
   },
   {
-    title: 'Group 2',
-    links: ['Link One', 'Link Two', 'Link Three', 'Link Four'],
-  },
-  {
-    title: 'Group 3',
-    links: ['Link One', 'Link Two', 'Link Three', 'Link Four'],
-  },
-  {
-    title: 'Footer Header',
-    description:
-      'Extra space for a call to action inside the footer that could help re-engage users.',
+    title: 'Connect',
+    links: ['GitHub', 'LinkedIn', 'Email', 'Resume'],
   },
 ];
 
@@ -30,38 +21,38 @@ const Footer = () => (
   <Box
     component="footer"
     sx={{
-      bgcolor: 'grey.900',
-      color: 'grey.100',
+      bgcolor: 'primary.dark',
+      color: 'common.white',
       py: { xs: 6, md: 8 },
       mt: 'auto',
     }}
   >
     <Container maxWidth="lg">
       <Grid container spacing={4} justifyContent="center">
-        {footerSections.map(({ title, links, description }) => (
+        {footerSections.map(({ title, links }) => (
           <Grid item xs={12} sm={6} md={3} key={title}>
-            <Typography variant="h6" gutterBottom>
+            <Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
               {title}
             </Typography>
-            {links ? (
-              <Stack component="nav" spacing={1}>
-                {links.map((label) => (
-                  <Link
-                    key={label}
-                    href="#"
-                    underline="hover"
-                    color="inherit"
-                    variant="body2"
-                  >
-                    {label}
-                  </Link>
-                ))}
-              </Stack>
-            ) : (
-              <Typography variant="body2" color="grey.300">
-                {description}
-              </Typography>
-            )}
+            <Stack component="nav" spacing={1}>
+              {links.map((label) => (
+                <Link
+                  key={label}
+                  href="#"
+                  underline="hover"
+                  color="inherit"
+                  variant="body2"
+                  sx={{
+                    opacity: 0.8,
+                    '&:hover': {
+                      opacity: 1,
+                    },
+                  }}
+                >
+                  {label}
+                </Link>
+              ))}
+            </Stack>
           </Grid>
         ))}
       </Grid>
@@ -77,18 +68,9 @@ const Footer = () => (
         justifyContent="center"
         alignItems="center"
       >
-        <Link href="#" underline="hover" color="inherit" variant="body2">
-          Site Map
-        </Link>
-        <Link href="#" underline="hover" color="inherit" variant="body2">
-          Contact Us
-        </Link>
-        <Link href="#" underline="hover" color="inherit" variant="body2">
-          Terms and Conditions
-        </Link>
-        <Link href="#" underline="hover" color="inherit" variant="body2">
-          Privacy Policy
-        </Link>
+        <Typography variant="body2" sx={{ opacity: 0.7 }}>
+          © {new Date().getFullYear()} Jacob Dayton. All rights reserved.
+        </Typography>
       </Stack>
     </Container>
   </Box>
