@@ -6,20 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export"
+    "deploy": "npm run build && firebase deploy",
+    "deploy:hosting": "npm run build && firebase deploy --only hosting"
   },
-	"engines": {
-		"node": "12"
-	},
   "dependencies": {
-    "@firebase/app": "^0.6.27",
-    "firebase": "^8.6.8",
-    "firebase-admin": "^9.9.0",
-    "next": "10.0.3",
-    "next-images": "^1.8.1",
-    "react": "^17.0.1",
-    "react-dom": "17.0.1",
-    "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^2.0.1"
+    "@emotion/cache": "^11.14.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/server": "^11.11.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^5.16.9",
+    "@mui/material": "^5.16.9",
+    "next": "^16.0.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-markdown": "^10.1.0"
   }
 }
